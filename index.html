@@ -1,13 +1,287 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jacob Gokongwei</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Smooth scroll effect when clicking the Resume anchor link */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #fcfcfc;
+            color: #111;
+            padding: 3rem 2rem;
+            line-height: 1.5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .layout-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            width: 100%;
+        }
+
+        @media (min-width: 900px) {
+            .layout-grid {
+                grid-template-columns: 1.3fr 1fr;
+                align-items: center;
+            }
+        }
+
+        .text-side {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 80vh;
+        }
+
+        header {
+            margin-bottom: 2.5rem;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            font-weight: 900;
+            letter-spacing: -0.04em;
+            line-height: 1;
+            margin-bottom: 0.75rem;
+            color: #000;
+        }
+
+        .meta-line {
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #666;
+            margin-bottom: 0.25rem;
+        }
+
+        .location {
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #888;
+        }
+
+        /* Massive, Eye-Catching Statement */
+        .headline-statement {
+            font-size: clamp(2rem, 4.5vw, 3.2rem);
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            color: #000;
+            margin-bottom: 1.5rem;
+        }
+
+        .interests {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 3.5rem;
+            max-width: 500px;
+        }
+
+        /* Nav Links with High-Pop Hover Effects */
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 4rem;
+            max-width: 400px;
+        }
+
+        .link-item {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #111;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            padding: 0.75rem 1rem;
+            border: 2px solid #111;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .link-item:hover {
+            background-color: #000;
+            color: #fff;
+            transform: scale(1.03) translateX(5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        /* Technical Contact Section at Bottom */
+        .contact-block {
+            border-top: 2px solid #111;
+            padding-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            font-family: monospace;
+            font-size: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #444;
+            text-decoration: none;
+            width: fit-content;
+            transition: all 0.2s ease;
+        }
+
+        .contact-item i {
+            font-size: 1.1rem;
+            color: #111;
+            transition: transform 0.2s ease;
+        }
+
+        .contact-item:hover {
+            color: #000;
+            font-weight: bold;
+            transform: translateX(3px);
+        }
+
+        .contact-item:hover i {
+            transform: scale(1.2);
+            color: #0055ff;
+        }
+
+        /* Image Side Layout */
+        .image-side {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .photo-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            overflow: hidden;
+            border-radius: 4px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .photo-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: all 0.4s ease;
+        }
+
+        .photo-wrapper.offset {
+            margin-top: 3rem;
+        }
+
+        .photo-wrapper:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            border-color: #000;
+        }
+
+        .photo-wrapper:hover img {
+            filter: grayscale(0%);
+        }
+
+        /* Resume Section Layout */
+        .resume-section {
+            max-width: 1200px;
+            margin: 6rem auto 2rem;
+            width: 100%;
+            border-top: 1px solid #ddd;
+            padding-top: 4rem;
+        }
+
+        .resume-container {
+            position: relative;
+            width: 100%;
+            height: 85vh;
+            border: 2px solid #111;
+            background: #fff;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+        }
+    </style>
 </head>
 <body>
 
-<h1>Jacob Gokongwei</h1>
+    <div style="width: 100%;">
+        <div class="layout-grid">
+            <div class="text-side">
+                <div>
+                    <header>
+                        <h1>Jacob Gokongwei</h1>
+                        <p class="meta-line">Mechanical Engineering @ Harvard</p>
+                        <p class="location">Philippines <span style="color:#111;">&rarr;</span> Boston</p>
+                    </header>
 
-<p>Mechanical Engineering Student at Harvard.</p>
+                    <p class="headline-statement">Always building.<br>Always learning.</p>
+                    
+                    <p class="interests">Interested in engineering, business, and exploring the world.</p>
+                    <nav class="links">
+                        <a href="./Projects/projects.html" class="link-item">Projects <span>↗</span></a>
+                        <a href="./Side Quests/sidequests.html" class="link-item">Side Quests <span>↗</span></a>
+                        <a href="#resume-viewer" class="link-item">Resume <span>↓</span></a>
+                    </nav>
+
+                </div>
+
+                <footer class="contact-block">
+                    <a href="mailto:jgokongwei@college.harvard.edu" class="contact-item">
+                        <i class="fa-regular fa-envelope"></i> jgokongwei@college.harvard.edu
+                    </a>
+                    <a href="tel:+18088248143" class="contact-item">
+                        <i class="fa-solid fa-mobile-screen-button"></i> +1 808 824 8143
+                    </a>
+                </footer>
+            </div>
+
+            <div class="image-side">
+                <div class="photo-wrapper">
+                    <img src="https://via.placeholder.com/600x800" alt="Jacob Portrait">
+                </div>
+                <div class="photo-wrapper offset">
+                    <img src="https://via.placeholder.com/600x800" alt="Project Showcase">
+                </div>
+            </div>
+        </div>
+
+        <section id="resume-viewer" class="resume-section">
+            <h2 style="font-size: 1.8rem; font-weight: 900; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: -0.02em;">Curriculum Vitae</h2>
+            <div class="resume-container">
+                <iframe src="resume.pdf" width="100%" height="100%" style="border: none;">
+                    <p style="padding: 2rem; font-family: monospace;">
+                        Your browser doesn't support embedded PDFs. 
+                        <a href="resume.pdf" style="color: #0055ff; font-weight: bold; text-decoration: underline;">Click here to download/view the PDF.</a>
+                    </p>
+                </iframe>
+            </div>
+        </section>
+    </div>
 
 </body>
 </html>
