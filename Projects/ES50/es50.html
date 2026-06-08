@@ -56,7 +56,7 @@
             margin-bottom: 3rem;
         }
 
-        /* Hero Image with Pop Hover */
+        /* Hero Image - No Grayscale, No Pop */
         .hero-image-wrapper {
             width: 100%;
             aspect-ratio: 16 / 9;
@@ -65,27 +65,22 @@
             overflow: hidden;
             border-radius: 4px;
             margin-bottom: 4rem;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition: all 0.3s ease;
         }
 
-        .hero-image-wrapper img {
+        .hero-image-wrapper img,
+        .hero-image-wrapper video {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: grayscale(100%);
-            transition: all 0.4s ease;
         }
 
         .hero-image-wrapper:hover {
             border-color: #111;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
         }
 
-        .hero-image-wrapper:hover img {
-            filter: grayscale(0%);
-        }
-
-        /* Simplified Layout Content */
+        /* Content Sections */
         .content-section {
             margin-bottom: 4rem;
         }
@@ -107,9 +102,10 @@
             color: #222;
             margin-bottom: 1.5rem;
             max-width: 750px;
+            text-align: justify;
         }
 
-        /* Clean Image Gallery Below Text */
+        /* Clean Image Gallery */
         .process-gallery {
             display: grid;
             grid-template-columns: 1fr;
@@ -130,21 +126,12 @@
             border: 1px solid #ddd;
             border-radius: 4px;
             object-fit: cover;
-            filter: grayscale(100%);
             transition: all 0.3s ease;
         }
 
         .gallery-item:hover {
-            filter: grayscale(0%);
             border-color: #111;
-            transform: scale(1.01);
-        }
-                .section-body p {
-            font-size: 1.15rem;
-            color: #222;
-            margin-bottom: 1.5rem;
-            max-width: 750px;
-            text-align: justify;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
         }
     </style>
 </head>
@@ -155,32 +142,34 @@
         <a href="../projects.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> All Projects</a>
         
         <header>
-            <!-- Replace text with your actual project title -->
-            <h1>Converyer Belt Sorter System </h1>
+            <h1>Conveyor Belt Sorter System</h1>
         </header>
 
-        <!-- Main Project Image Showcase -->
+        <!-- Main Project Video -->
         <div class="hero-image-wrapper">
-            <img src="https://via.placeholder.com/1200x675" alt="Project Showcase">
+            <video width="100%" height="auto" controls>
+                <source src="../../videos/sorter.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
 
         <main>
-            <!-- Single Clean Overview Section -->
+            <!-- Overview Section -->
             <section class="content-section">
                 <div class="section-label">Overview</div>
                 <div class="section-body">
-                    <!-- Replace this with your exact project description -->
                     <p>Designed and built an automated sorting system that identifies colored objects using optical sensors and directs them into separate bins. Used an Arduino UNO, color sensor, DC motors, and servo motors. Integrated sensing, processing, and actuation into a complete system.</p>
                 </div>
             </section>
 
-            <!-- Media Placements -->
+            <!-- Gallery Images -->
             <div class="process-gallery">
-                <img class="gallery-item" src="https://via.placeholder.com/800x600" alt="Project Image 1">
-                <img class="gallery-item" src="https://via.placeholder.com/800x600" alt="Project Image 2">
+                <img class="gallery-item" src="../../images/topview.jpg" alt="Project Image 1">
+                <img class="gallery-item" src="../../images/calibration.png" alt="Project Image 2">
             </div>
         </main>
-    </div>
 
+    </div>
+    
 </body>
 </html>
