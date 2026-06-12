@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boat Building | Jacob Gokongwei</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #fcfcfc;
+            color: #111;
+            padding: 4rem 2rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Back Navigation */
+        .back-link {
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: #666;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 3rem;
+            transition: all 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: #0055ff;
+            transform: translateX(-5px);
+        }
+
+        /* Title */
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            letter-spacing: -0.04em;
+            line-height: 1;
+            color: #000;
+            margin-bottom: 3rem;
+        }
+
+        /* Hero Image */
+        .hero-image-wrapper {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            overflow: hidden;
+            border-radius: 4px;
+            margin-bottom: 4rem;
+            transition: all 0.3s ease;
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-image-wrapper:hover {
+            border-color: #111;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        /* Content Sections */
+        .content-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            font-size: 1.2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -0.01em;
+            color: #000;
+            border-bottom: 3px solid #111;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            width: fit-content;
+        }
+
+        .section-body p {
+            font-size: 1.15rem;
+            color: #222;
+            margin-bottom: 1.5rem;
+            max-width: 750px;
+            text-align: justify;
+        }
+
+        /* Image Gallery */
+        .process-gallery {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        @media (min-width: 600px) {
+            .process-gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .gallery-item {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            border-color: #111;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Back Navigation -->
+        <a href="../projects.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> All Projects</a>
+        
+        <header>
+            <h1>Boat Building</h1>
+        </header>
+
+        <!-- Main Project Image -->
+        <div class="hero-image-wrapper">
+            <img src="../../images/canoe1.jpg" alt="Boat Project">
+        </div>
+
+        <main>
+            <!-- Overview Section -->
+            <section class="content-section">
+                <div class="section-label">Overview</div>
+                <div class="section-body">
+                    <p>Collaboratively designed and built a full-scale wooden canoe using plywood, epoxy, and a ton of trial and error. The assembly process taught me a lot about woodworking techniques, waterproofing, and just how effective epoxy can be. The project culminated in a successful crossing of the Charles River</p>
+                </div>
+            </section>
+
+            <!-- Gallery -->
+            <div class="process-gallery">
+                <img class="gallery-item" src="../../images/boat2.jpg" alt="Boat Building Phase 1">
+                <img class="gallery-item" src="../../images/boat3.jpg" alt="Boat Building Phase 2">
+            </div>
+        </main>
+
+    </div>
+    
+</body>
+</html>

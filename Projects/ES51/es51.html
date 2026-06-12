@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES51 | Jacob Gokongwei</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #fcfcfc;
+            color: #111;
+            padding: 4rem 2rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Back Navigation */
+        .back-link {
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: #666;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 3rem;
+            transition: all 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: #0055ff;
+            transform: translateX(-5px);
+        }
+
+        /* Title */
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            letter-spacing: -0.04em;
+            line-height: 1;
+            color: #000;
+            margin-bottom: 3rem;
+        }
+
+        /* Hero Image/Video */
+        .hero-image-wrapper {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            overflow: hidden;
+            border-radius: 4px;
+            margin-bottom: 4rem;
+            transition: all 0.3s ease;
+        }
+
+        .hero-image-wrapper img,
+        .hero-image-wrapper video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-image-wrapper:hover {
+            border-color: #111;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        /* Content Sections */
+        .content-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            font-size: 1.2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -0.01em;
+            color: #000;
+            border-bottom: 3px solid #111;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            width: fit-content;
+        }
+
+        .section-body p {
+            font-size: 1.15rem;
+            color: #222;
+            margin-bottom: 1.5rem;
+            max-width: 750px;
+            text-align: justify;
+        }
+
+        /* Media Gallery */
+        .process-gallery {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        @media (min-width: 600px) {
+            .process-gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .gallery-item,
+        .gallery-video {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover,
+        .gallery-video:hover {
+            border-color: #111;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Back Navigation -->
+        <a href="../projects.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> All Projects</a>
+        
+        <header>
+            <h1>ES51 Project</h1>
+        </header>
+
+        <!-- Main Hero Video -->
+        <div class="hero-image-wrapper">
+            <video width="100%" height="auto" controls>
+                <source src="../../videos/moving.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <main>
+            <!-- Overview Section -->
+            <section class="content-section">
+                <div class="section-label">Overview</div>
+                <div class="section-body">
+                    <p>Designed and built a claw robot as part of Harvard's 
+                        introductory mechanical engineering course. Learned manual milling and lathing and gained experience in CAD, and the iterative design process. 
+</p>
+                </div>
+            </section>
+
+            
+
+            <!-- Gallery with Videos and Photos -->
+            <div class="process-gallery">
+                <video class="gallery-video" controls>
+                    <source src="../../videos/arm.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <img class="gallery-item" src="../../images/es51a.jpg" alt="ES51 Photo 1">
+                <img class="gallery-item" src="../../images/es51b.jpg" alt="ES51 Photo 2">
+            </div>
+        </main>
+
+    </div>
+    
+</body>
+</html>
